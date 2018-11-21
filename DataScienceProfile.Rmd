@@ -1,0 +1,29 @@
+---
+title: "DataScienceProfile"
+author: "Travis Daun"
+date: "11/14/2018"
+output:
+  html_document:
+    keep_md: true
+---
+
+```{r, echo=FALSE}
+DSprofnames <- c("Computer Programming", "Math", "Statistics", 
+                 "Machine Learning", "Domain Expertise", 
+                 "Communication and Presentation Skills",
+                 "Data Visualization")
+compProg <- 4
+math <-4
+stats <- 3
+ML <- 3
+domain <- 3
+comPres <- 3
+dataVis <-4
+Score <- c(compProg, math, stats, ML, domain, comPres, dataVis)
+Travis <- data.frame(DSprofnames, Score)
+
+library(ggplot2)
+p<-ggplot(data=Travis, aes(x=DSprofnames, y=Score)) +
+  geom_bar(stat="identity")
+p
+```
